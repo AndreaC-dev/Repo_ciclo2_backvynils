@@ -1,0 +1,66 @@
+<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 offset-lg-2 offset-md-1 float-md-center">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="container-fluid">
+        <div class="col-6 p-4">
+        <button i18n class="btn btn-prymary color-backvynils" style="float: right" id="add-album" routerLink="/albums/list">Return</button>
+        <h1 i18n>Album Creation</h1>
+        <form [formGroup]="albumForm" (ngSubmit)="!albumForm.invalid && createAlbum(albumForm.value)">
+          <div class="form-group">
+            <label i18n for="name">
+            Name
+            </label>
+            <input novalidate id="name" class="form-control" formControlName="name" i18n-placeholder placeholder="Full Name">
+            <div i18n class="alert alert-danger alert-dismissible fade show "
+              *ngIf="albumForm.get('name').hasError('required') && albumForm.get('name').touched">
+              Name required
+            </div>
+            <div i18n class="alert alert-danger alert-dismissible fade show"
+              *ngIf="albumForm.get('name').hasError('minlength') && albumForm.get('name').dirty">
+              Name too short. Please include more than 2 letters.
+            </div>
+            <label i18n for="cover">
+            Cover
+            </label>
+            <input novalidate id="cover" class="form-control" formControlName="cover" i18n-placeholder placeholder="Cover">
+            <div i18n class="alert alert-danger alert-dismissible fade show"
+              *ngIf="albumForm.get('cover').hasError('required') && albumForm.get('cover').touched">
+              Cover required
+            </div>
+            <div i18n class="alert alert-danger alert-dismissible fade show"
+              *ngIf="albumForm.get('cover').hasError('pattern') && albumForm.get('cover').dirty">
+              Please include a valid url
+            </div>
+            <label i18n for="genre">
+            Genre
+            </label>
+            <input novalidate id="genre" class="form-control" formControlName="genre" i18n-placeholder placeholder="Genre">
+            <div i18n class="alert alert-danger alert-dismissible fade show"
+              *ngIf="albumForm.get('genre').hasError('required') && albumForm.get('genre').touched">
+              Genre required
+            </div>
+            <div i18n class="alert alert-danger alert-dismissible fade show"
+              *ngIf="albumForm.get('genre').hasError('minlength') && albumForm.get('Genre').dirty">
+              Genre too short. Please include more than 2 letters.
+            </div>
+          </div>
+          <label i18n for="releaseDate">
+          Release Date
+          </label>
+          <input novalidate id="releaseDate" class="form-control" formControlName="releaseDate" type="date" i18n-placeholder placeholder="Release Date">z
+          <div i18n class="alert alert-danger alert-dismissible fade show"
+            *ngIf="albumForm.get('releaseDate').hasError('required') && albumForm.get('releaseDate').touched">
+            Release date required
+          </div>
+          <div i18n class="alert alert-danger alert-dismissible fade show"
+            *ngIf="albumForm.get('releaseDate').hasError('c: AbstractControl') && albumForm.get('releaseDate').dirty">
+            Please enter a date in the past
+          </div>
+          <button i18n type="submit" class="btn btn-primary" [disabled]="!albumForm.valid">Create</button>
+          <button i18n type="button" class="btn btn-danger ml-3" (click)="cancelCreation()">Cancel</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

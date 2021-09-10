@@ -1,0 +1,86 @@
+<testExecutions version="1">
+  <file path="src/app/musician/musician-detail/musician-detail.component.spec.ts">
+    <testCase name="MusicianDetailComponent should strDate()" duration="69"/>
+    <testCase name="MusicianDetailComponent should ngOnInit()" duration="11"/>
+    <testCase name="MusicianDetailComponent Should getMusicianDetail" duration="6"/>
+    <testCase name="MusicianDetailComponent should create" duration="8"/>
+  </file>
+  <file path="src/app/coleccionista/coleccionista-listar/coleccionista-listar.component.spec.ts">
+    <testCase name="ColeccionistarComponent Should getColeccionistaList()" duration="33"/>
+    <testCase name="ColeccionistarComponent Should have an h1 tag" duration="10"/>
+    <testCase name="ColeccionistarComponent Should onSelected" duration="15"/>
+    <testCase name="ColeccionistarComponent should create" duration="9"/>
+  </file>
+  <file path="src/app/album/album-create/album-create.component.spec.ts">
+    <testCase name="AlbumCreateComponent Should createAlbum()" duration="35"/>
+    <testCase name="AlbumCreateComponent should create" duration="3"/>
+  </file>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should have as title 'backvynils'" duration="24"/>
+    <testCase name="AppComponent should create the app" duration="17"/>
+  </file>
+  <file path="src/app/album/album.service.spec.ts">
+    <testCase name="Service: Album should create service" duration="4"/>
+    <testCase name="Service: Album getAlbums() should return 10 records" duration="5"/>
+  </file>
+  <file path="src/app/coleccionista/collector-detail/collector-detail.component.spec.ts">
+    <testCase name="BandDetailComponent Should getPerformers()" duration="19"/>
+  </file>
+  <file path="src/app/album/album-listar/album-listar.component.spec.ts">
+    <testCase name="AlbumListarComponent Should have an h1 tag" duration="20"/>
+    <testCase name="AlbumListarComponent Should onSelected" duration="7"/>
+    <testCase name="AlbumListarComponent should create" duration="5"/>
+  </file>
+  <file path="src/app/musician/musician-create/musician-create.component.spec.ts">
+    <testCase name="MusicianCreateComponent Should createMusician" duration="24"/>
+    <testCase name="MusicianCreateComponent Should cancelCreation()" duration="7"/>
+    <testCase name="MusicianCreateComponent should create" duration="5"/>
+  </file>
+  <file path="src/app/musician/musician-list/musician-list.component.spec.ts">
+    <testCase name="MusicianListomponent should create" duration="21"/>
+    <testCase name="MusicianListomponent Should have an h1 tag" duration="11"/>
+    <testCase name="MusicianListomponent Should onSelected" duration="6"/>
+  </file>
+  <file path="src/app/coleccionista/coleccionista.service.spec.ts">
+    <testCase name="CourseService getColeccionistas() should return 10 records" duration="3"/>
+  </file>
+  <file path="src/app/band/band.service.spec.ts">
+    <testCase name="Service: Band addingMusician() should return 1 record" duration="3"/>
+    <testCase name="Service: Band getBandDetail() should return the Id" duration="3"/>
+    <testCase name="Service: Band should create service" duration="2"/>
+    <testCase name="Service: Band getBands() should return 10 records" duration="4"/>
+    <testCase name="Service: Band createBands() should return 1 record" duration="4"/>
+  </file>
+  <file path="src/app/coleccionista/collector-create/collector-create.component.spec.ts">
+    <testCase name="CollectorCreateComponent Should createCollector" duration="28"/>
+  </file>
+  <file path="src/app/album/album-detail/album-detail.component.spec.ts">
+    <testCase name="AlbumDetailComponent Should create Comment" duration="19"/>
+  </file>
+  <file path="src/app/musician/musician.service.spec.ts">
+    <testCase name="Service: Musician should create service" duration="1"/>
+    <testCase name="Service: Musician createBands() should return 1 record" duration="2"/>
+    <testCase name="Service: Musician getMusicians() should return 10 records" duration="3"/>
+    <testCase name="Service: Musician getMusicianDetail() should return the Id" duration="2"/>
+  </file>
+  <file path="src/app/band/band-list/band-list.component.spec.ts">
+    <testCase name="BandListComponent Should onSelected" duration="20"/>
+    <testCase name="BandListComponent should create" duration="7"/>
+    <testCase name="BandListComponent Should have an h1 tag" duration="8"/>
+  </file>
+  <file path="src/app/coleccionista/collector-detail/collector-detail.component.spec.ts">
+    <testCase name="BandDetailComponent Should getBandDetail" duration="18"/>
+    <testCase name="BandDetailComponent Should isIn()" duration="7"/>
+    <testCase name="BandDetailComponent Should addPerformer()" duration="7"/>
+    <testCase name="BandDetailComponent Should buscarId" duration="6"/>
+    <testCase name="BandDetailComponent Should addMusician" duration="8"/>
+    <testCase name="BandDetailComponent should create" duration="9"/>
+    <testCase name="BandDetailComponent should strDate()" duration="7"/>
+    <testCase name="BandDetailComponent should ngOnInit()" duration="8"/>
+  </file>
+  <file path="src/app/band/band-create/band-create.component.spec.ts">
+    <testCase name="BandCreateComponent Should createBand()" duration="17"/>
+    <testCase name="BandCreateComponent Should cancelCreation()" duration="9"/>
+    <testCase name="BandCreateComponent should ngOnInit()" duration="3"/>
+  </file>
+</testExecutions>

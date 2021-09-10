@@ -1,0 +1,59 @@
+<main>
+  <nav class="navbar navbar-expand-lg navbar-dark color-back" aria-label="Search">
+    <div class="input-group">
+      <input i18n type="search" class="form-control rounded mr-2 color-borderbackvynils" i18n-placeholder placeholder="Search albums, bands, musicians and more" aria-label="Search"
+        aria-label="input text search" />
+        <div class="dropdown">
+          <button i18n class="btn btn-primary dropdown-toggle color-backvynils mr-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            All
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a i18n class="dropdown-item" href="#">Collectors</a>
+            <a i18n class="dropdown-item" href="#">Albums</a>
+            <a i18n class="dropdown-item" href="#">Bands</a>
+            <a i18n class="dropdown-item" href="#">Musicians</a>
+            <a i18n class="dropdown-item" href="#">Prizes</a>
+          </div>
+        </div>
+      <button i18n type="button" class="btn btn-primary color-backvynils">Search</button>
+    </div>
+</nav>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark color-back" aria-label="Buttons">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="https://i.imgur.com/Rmjkv3P.jpg" class="d-inline-block align-top logo" @bottom-left-corner alt="Logo of BackVynils">
+        BackVynils
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+
+            <ul class="nav navbar-nav navbar-center">
+              <li><button i18n class="btn btn-prymary navbar-btn ml-2 color-backvynils" id="collectors-navbar-item" routerLink="/collectors/list">Collectors</button></li>
+              <li><button i18n class="btn btn-prymary navbar-btn ml-2 color-backvynils" id="albums-navbar-item" routerLink="/albums/list">Albums</button></li>
+              <li><button i18n class="btn btn-prymary navbar-btn ml-2 color-backvynils" id="bands-navbar-item" routerLink="/bands/list">Bands</button></li>
+              <li><button i18n class="btn btn-prymary navbar-btn ml-2 color-backvynils" id="musicians-navbar-item" routerLink="/musicians/list">Musicians</button></li>
+              <li><button i18n disabled class="btn btn-prymary navbar-btn ml-2 color-backvynils" id="prizes-navbar-item" routerLink="/prizes/list">Prizes</button></li>
+            </ul>
+          </div>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive login">
+        <ul class="nav navbar-nav navbar-right">
+          <li><button i18n disabled class="btn btn-prymary navbar-btn ml-2 color-backvynils">Register</button></li>
+          <li><button i18n disabled class="btn btn-prymary navbar-btn ml-2 color-backvynils">I'm Collector</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="container-fluid" id="principal">
+  <div class="row">
+    <div class="col">
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+</main>

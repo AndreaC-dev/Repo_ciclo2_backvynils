@@ -1,0 +1,35 @@
+<div class="container-fluid" *ngIf="albumDetail">
+  <p class="h1 p-1" i18n>Genre: {{albumDetail.genre}}</p>
+    <div class="container">
+      <h2 i18n>Tracks:</h2>
+      <div class="row g-0" style="max-width: 540px;" *ngFor="let track of albumDetail.tracks">
+        <div class="col-2">
+          <p>{{track.name}} {{track.duration}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h2 i18n>Comments:</h2>
+      <div class="row g-0" style="max-width: 540px;" *ngFor="let comment of albumDetail.comments">
+        <div class="col">
+          <p>{{comment.description}}</p>
+        </div>
+      </div>
+      <form [formGroup]="commentForm" (ngSubmit)="!commentForm.invalid && createComment(commentForm.value)">
+        <div class="form-group">
+          <input novalidate id="description" class="form-control" formControlName="description" i18n-placeholder placeholder="Comment">
+          <div class="alert alert-danger alert-dismissible fade show "
+            *ngIf="commentForm.get('description').hasError('required') && commentForm.get('description').touched">
+            Comment required
+          </div>
+          <div class="alert alert-danger alert-dismissible fade show"
+            *ngIf="commentForm.get('description').hasError('minlength') && commentForm.get('description').dirty">
+            Comment too short. Please include more than 2 letters.
+          </div>
+
+        </div>
+        <button i18n type="submit" class="btn btn-primary" [disabled]="!commentForm.valid">Create</button>
+        <button i18n type="button" class="btn btn-danger ml-3" (click)="cancelCreation()">Cancel</button>
+      </form>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+<div
+  class="
+    col-lg-8 col-md-10 col-sm-12 col-xs-12
+    offset-lg-2 offset-md-1
+    float-md-center
+  "
+>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="container-fluid" id="form">
+        <div class="col-6 p-4">
+          <button
+            i18n
+            class="btn btn-prymary color-backvynils"
+            style="float: right"
+            id="add-collectors"
+            routerLink="/collectors/list"
+          >
+            Return
+          </button>
+          <h1 i18n>Collector Creation</h1>
+          <form
+            [formGroup]="collectorForm"
+            (ngSubmit)="!collectorForm.invalid && createCollector(collectorForm.value)"
+          >
+            <div class="form-group" id="collectors">
+              <label i18n for="name"> Name </label>
+              <input
+                novalidate
+                id="name"
+                class="form-control"
+                formControlName="name"
+                i18n-placeholder
+                placeholder="Full Name"
+              />
+              <div
+                i18n
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="
+                collectorForm.get('name').hasError('required') &&
+                collectorForm.get('name').touched
+                "
+              >
+                Name required
+              </div>
+              <div
+                i18n
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="
+                collectorForm.get('name').hasError('minlength') &&
+                collectorForm.get('name').dirty
+                "
+              >
+                Name too short. Please include more than 2 letters.
+              </div>
+              <label i18n for="telephone"> Telephone </label>
+              <input
+                novalidate
+                id="telephone"
+                class="form-control"
+                formControlName="telephone"
+                i18n-placeholder
+                placeholder="Telephone"
+              />
+              <div
+                i18n
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="
+                collectorForm.get('telephone').hasError('required') &&
+                collectorForm.get('telephone').touched
+                "
+              >
+                Telephone required
+              </div>
+              <div
+              i18n
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="
+              collectorForm.get('telephone').hasError('minlength') &&
+              collectorForm.get('telephone').touched
+              "
+            >
+              Telephone too short
+            </div>
+            <div
+              i18n
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="
+              collectorForm.get('telephone').hasError('pattern') &&
+              collectorForm.get('telephone').touched
+              "
+            >
+            Only numbers allowed
+            </div>
+            <label i18n for="email"> Email </label>
+            <input
+              novalidate
+              id="description"
+              class="form-control"
+              formControlName="email"
+              i18n-placeholder
+              placeholder="Email"
+            />
+            <div
+              i18n
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="
+              collectorForm.get('email').hasError('required') &&
+              collectorForm.get('email').touched"
+            >
+              Email required
+            </div>
+            <div
+            i18n
+            class="alert alert-danger alert-dismissible fade show"
+            *ngIf="collectorForm.get('email').hasError('pattern')"
+            >
+              Incorrect email format
+          </div>
+
+
+            </div>
+            <button
+              i18n
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="!collectorForm.valid"
+            >
+              Create
+            </button>
+            <button
+              i18n
+              type="button"
+              class="btn btn-danger ml-3"
+              (click)="cancelCreation()"
+            >
+              Cancel
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

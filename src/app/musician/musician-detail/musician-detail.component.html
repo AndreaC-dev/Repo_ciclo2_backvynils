@@ -1,0 +1,23 @@
+<div class="container-fluid" id="detail">
+  <h2>{{musicianDetail.name}}</h2>
+  <div class="row">
+    <div class="col-2">
+        <img class="img-fluid" src="{{musicianDetail.image}}"  alt="Image of {{musicianDetail.name}}"/>
+    </div>
+    <div class="col">
+      <dl>
+        <dt i18n class="bold">Description</dt>
+        <dd id="description">{{musicianDetail.description}}</dd>
+      </dl><hr>
+      <dl>
+        <dt i18n>Birth Date</dt>
+        <dd id="date">{{ strToDate(musicianDetail.birthDate) |date:"longDate"}}</dd>
+      </dl><hr>
+      <dl>
+        <dt i18n> Prizes</dt>
+        <dd id="priz"> </dd>
+        <dd *ngFor = "let a of musicianDetail.prizes">{{a.name}}{{a.organization}}</dd>
+      </dl>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 offset-lg-2 offset-md-1 float-md-center">
+  <div class="jumbotron">
+    <div class="container">
+        <div class="container-fluid" id="list">
+          <h1 i18n>Bands</h1>
+          <button i18n class="btn btn-prymary color-backvynils" id="add-bands" routerLink="/bands/create">Add Bands</button>
+        <div class="row p-2">
+          <div class="col cards" *ngFor="let b of bands">
+            <figure class="figure">
+              <img class="img-fluid" src='{{b.image}}' alt="Image of {{b.name}}"/>
+              <figcaption class="title-caption text-center" id="bandName {{b.id}}">{{b.name}} </figcaption>
+              <figcaption i18n class="title-caption-class text-center">Band</figcaption>
+              <a i18n class="d-flex justify-content-end mt-auto p-2" id="linkMore {{b.id}}" (click)="onSelected(b)">More details ▼</a>
+            </figure>
+          </div>
+        </div>
+        <div class="row p-2">
+          <div class="col border">
+            <div *ngIf="selected">
+              <a i18n class="d-flex justify-content-end mt-auto p-2" id="linkLess" (click)="selected=false">Less details ▲</a>
+              <app-band-detail [bandDetail]="selectedBand"></app-band-detail>
+            </div>
+            </div>  
+        </div>
+      </div>
+      </div>
+    </div> 
+</div>

@@ -1,0 +1,66 @@
+<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 offset-lg-2 offset-md-1 float-md-center">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="container-fluid" id="form">
+    <div class="col-6 p-4">
+      <button i18n class="btn btn-prymary color-backvynils" style="float: right" id="add-musicians" routerLink="/bands/list">Return</button>
+      <h1 i18n>Band Creation</h1>
+<form [formGroup]="bandForm" (ngSubmit)="!bandForm.invalid && createBand(bandForm.value)">
+  <div class="form-group">
+    <label i18n for="name">
+      Name
+    </label>
+    <input novalidate id="name" class="form-control" formControlName="name" i18n-placeholder placeholder="Full Name">
+    <div i18n class="alert alert-danger alert-dismissible fade show"
+        *ngIf="bandForm.get('name').hasError('required') && bandForm.get('name').touched">
+        Name required
+    </div>
+    <div i18n class="alert alert-danger alert-dismissible fade show"
+        *ngIf="bandForm.get('name').hasError('minlength') && bandForm.get('name').dirty">
+        Name too short. Please include more than 2 letters.
+    </div>
+    <label i18n for="image">
+      Image
+  </label>
+  <input novalidate id="image" class="form-control" formControlName="image" i18n-placeholder placeholder="Image">
+  <div i18n class="alert alert-danger alert-dismissible fade show"
+      *ngIf="bandForm.get('image').hasError('required') && bandForm.get('image').touched">
+      Image required
+  </div>
+  <div i18n class="alert alert-danger alert-dismissible fade show"
+  *ngIf="bandForm.get('image').hasError('pattern') && bandForm.get('image').dirty">
+  Please include a valid url
+</div>
+    <label i18n for="description">
+      Description
+  </label>
+  <input novalidate id="description" class="form-control" formControlName="description" i18n-placeholder placeholder="Description">
+  <div i18n class="alert alert-danger alert-dismissible fade show"
+      *ngIf="bandForm.get('description').hasError('required') && bandForm.get('description').touched">
+      Description required
+  </div>
+  <div i18n class="alert alert-danger alert-dismissible fade show"
+  *ngIf="bandForm.get('description').hasError('minlength') && bandForm.get('description').dirty">
+  Description too short. Please include more than 10 letters.
+</div>
+  </div>
+  <label i18n for="creationDate">
+    Creation Date
+</label>
+<input novalidate id="creationDate" class="form-control" formControlName="creationDate" type="date" i18n-placeholder placeholder="Creation Date">
+<div i18n class="alert alert-danger alert-dismissible fade show"
+    *ngIf="bandForm.get('creationDate').hasError('required') && bandForm.get('creationDate').touched">
+    Creation date required
+</div>
+<div i18n class="alert alert-danger alert-dismissible fade show"
+    *ngIf="bandForm.get('creationDate').hasError('c: AbstractControl') && bandForm.get('creationDate').dirty">
+    Please enter a date in the past
+</div>
+  <button i18n type="submit" class="btn btn-primary" [disabled]="!bandForm.valid">Create</button>                
+  <button i18n type="button" class="btn btn-danger ml-3" (click)="cancelCreation()">Cancel</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>

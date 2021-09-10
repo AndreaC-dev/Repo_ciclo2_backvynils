@@ -1,0 +1,60 @@
+dd {
+  font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size:large;
+  font-style: italic;
+}
+figcaption {
+  font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.figure {
+    background-color: white;
+  border-color:black;
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+.color-backvynils{
+  background-color:  #05508d;
+  border-color:black;
+  color:white;
+  transition: none;
+  font-size: large;
+}
+.color-borderbackvynils{
+  border-color: #626F7A;
+}
+.color-back{
+  background-color: #626F7A;
+}
+.link-test{align-content: left;}
+
+.color-buttback{
+  border-color: white;
+  color:white;
+}
+.nav-item{
+  border-color: white;
+  color:white;
+}
+.btn:hover {
+  background: white;
+  color:black;
+  font-size: larger;
+}
+.navbar-brand{
+  font-style: oblique;}
+
+.btn:focus, .btn:active{
+  background: white;
+  color:black;
+  border-color: white;
+  font-size: larger;
+}
+.active{
+  background: white;
+  color:black;
+  border-color: white;
+}
+.logo{width:30px;
+  height:30px }

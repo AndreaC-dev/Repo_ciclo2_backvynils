@@ -1,0 +1,41 @@
+.title-caption-class {
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-style: italic;
+  }
+    figcaption {
+      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      font-size: large;
+    }
+    .img-fluid {
+      width: 250px;
+      height: 200px;
+      background-color:white
+    }
+    
+    
+    .figure {
+        background-color: white;
+      border-color:black;
+      margin: 0 auto; /* Added */
+      float: none; /* Added */
+      margin-bottom: 10px; /* Added */
+    }
+    .color-backvynils{
+      background-color:  #05508d;
+      border-color:#999999;
+      color:white;
+      float: "right";
+  
+    }
+  
+    .color-borderbackvynils{
+      border-color: #999999
+    }
+    
+    .link-test{align-content: left;}
+    a{color:#05508d;}
+  
+    h1{
+      font-size:x-large
+
+    }

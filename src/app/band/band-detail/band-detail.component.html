@@ -1,0 +1,40 @@
+<div class="container-fluid" id="detail">
+  <h2>{{bandDetail.name}}</h2>
+  <div class="row">
+    <div class="col-2">
+      <img class="img-fluid" src="{{bandDetail.image}}" alt="Image of {{bandDetail.name}}"/>
+    </div>
+    <div class="col">
+      <dl>
+        <dt i18n class="bold">Description</dt>
+        <dd id="description">{{bandDetail.description}}</dd>
+      </dl><hr>
+      <dl>
+        <dt i18n>Creation Date</dt>
+        <dd id="date">{{ strToDate(bandDetail.creationDate) |date:"longDate"}}</dd>
+      </dl><hr>
+      <dl>
+        <dt i18n> Musicians</dt>
+        <dd id="music"> </dd>
+        <dd *ngFor = "let a of bandDetail.musicians"><a routerLink="../../musicians/{{a.id}}" aria-label="Link to musician"></a>{{a.name}}</dd>
+      </dl><hr>
+        <form [formGroup]="musicianForm" class="form-inline">
+        <div class="form-group  mx-sm-3 mb-2">
+          <select class="form-control" id="musicians" rows="3" formControlName="musicians" aria-label="List of musicians">
+            <option *ngFor="let e of listMusicians" value={{e.name}}>{{e.name}}</option>
+          </select>
+        </div>
+        <button i18n class="btn btn-prymary color-backvynils mb-2" style="float: right" id="add-musicians" (click)="addMusician(musicianForm.value)">Add Musicians</button>
+</form><hr>
+<dl>
+        <dt i18n> Prizes</dt>
+        <dd id="priz"> </dd>
+        <dd *ngFor = "let a of bandDetail.performerPrizes">{{ a.premiationDate}}</dd>
+        <dd></dd>
+      </dl>
+
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 offset-lg-2 offset-md-1 float-md-center">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="container-fluid">
+          <h1 class="text-left" i18n>Albums</h1>
+          <button i18n class="btn btn-prymary color-backvynils" id="add-album" routerLink="/albums/create">Add Albums</button>
+        <div class="column">
+          <div class="row g-0" style="max-width: 540px;" *ngFor="let album of albums">
+              <div class="col-md-4">
+                <img src="{{album.cover}}" width="200" height="200" class="img" alt="Image of {{album.name}}" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <div class="card-text">
+                    <figcaption class="text-start">{{album.name}}</figcaption>
+                  </div>
+                  <tr *ngFor="let performer of album.performers">
+                    <p>{{performer.name}}</p>
+                  </tr>
+                  <p>{{ album.releaseDate}}</p>
+                </div>
+                <a class="d-flex justify-content-end mt-auto p-2" (click)="onSelected(album)" i18n>More details ▼</a>
+              </div>
+          </div>
+        </div>
+      </div>
+        <div class="row p-2">
+          <div class="col border">
+            <div *ngIf="selected">
+              <a class="d-flex justify-content-end mt-auto p-2" (click)="selected=false" i18n>Less details ▲</a>
+              <app-album-detail [albumDetail]="selectedAlbum"></app-album-detail>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

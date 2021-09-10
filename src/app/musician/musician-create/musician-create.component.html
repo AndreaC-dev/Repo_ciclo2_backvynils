@@ -1,0 +1,66 @@
+<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 offset-lg-2 offset-md-1 float-md-center">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="container-fluid" id="form">
+    <div class="col-6 p-4">
+      <button i18n class="btn btn-prymary color-backvynils" style="float: right" id="add-musicians" routerLink="/musicians/list">Return</button>
+      <h1 i18n>Musician Creation</h1>
+<form [formGroup]="musicianForm" (ngSubmit)="!musicianForm.invalid && createMusician(musicianForm.value)">
+  <div class="form-group">
+    <label i18n for="name">
+        Name
+    </label>
+    <input novalidate id="name" class="form-control" formControlName="name" i18n-placeholder placeholder="Full Name">
+    <div i18n class="alert alert-danger alert-dismissible fade show"
+        *ngIf="musicianForm.get('name').hasError('required') && musicianForm.get('name').touched">
+        Full name required
+    </div>
+    <div i18n class="alert alert-danger alert-dismissible fade show"
+        *ngIf ="musicianForm.get('name').hasError('minlength')">
+        Name too short. Please include more than 5 letters.
+    </div>
+    <label i18n for="image">
+      Image
+  </label>
+  <input i18n novalidate id="image" class="form-control" formControlName="image" i18n-placeholder placeholder="Image">
+  <div i18n class="alert alert-danger alert-dismissible fade show"
+      *ngIf="musicianForm.get('image').hasError('required') && musicianForm.get('image').touched">
+      Image required
+  </div>
+  <div i18n class="alert alert-danger alert-dismissible fade show"
+  *ngIf ="musicianForm.get('image').hasError('pattern') && musicianForm.get('image').touched">
+  Please include a valid url
+  </div>
+    <label i18n for="description">
+      Description
+  </label>
+  <input i18n novalidate id="description" class="form-control" formControlName="description" i18n-placeholder placeholder="Description">
+  <div i18n class="alert alert-danger alert-dismissible fade show"
+      *ngIf ="musicianForm.get('description').hasError('required') && musicianForm.get('description').touched">
+      Description required
+  </div>
+  <div i18n class="alert alert-danger alert-dismissible fade show"
+      *ngIf ="musicianForm.get('description').hasError('minlength') && musicianForm.get('description').dirty">
+      Description too short. Please include more than 10 letters.
+  </div>
+  </div>
+  <label i18n for="birthDate">
+    Birth date
+</label>
+<input novalidate id="birthDate" class="form-control" formControlName="birthDate" type="date" i18n-placeholder placeholder="Birth Date">
+<div i18n class="alert alert-danger alert-dismissible fade show"
+    *ngIf ="musicianForm.get('birthDate').hasError('required') && musicianForm.get('birthDate').touched">
+    Birth date required
+</div>
+<div i18n class="alert alert-danger alert-dismissible fade show"
+    *ngIf ="musicianForm.get('birthDate').hasError('c: AbstractControl') && musicianForm.get('bithDate').dirty">
+    Please enter a date in the past
+</div>
+  <button i18n type="submit" class="btn btn-primary" [disabled]="!musicianForm.valid">Create</button>                
+  <button i18n type="button" class="btn btn-danger ml-3" (click)="cancelCreation()">Cancel</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>

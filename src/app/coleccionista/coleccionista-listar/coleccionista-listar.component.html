@@ -1,0 +1,29 @@
+<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 offset-lg-2 offset-md-1 float-md-center">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="container">
+        <h1 i18n >Collectors</h1>
+          <div class="container-fluid">
+          <button i18n class="btn btn-prymary color-backvynils" id="add-collectors" routerLink="/collectors/create">Add Collectors</button>
+          <div class="row p-2">
+            <div class="col" *ngFor="let c of coleccionistas">
+              <figure class="figure">
+                <figcaption class="title-caption text-center" id="collectorName {{c.id}}">{{c.name}} </figcaption>
+                <figcaption i18n class="title-caption text-center">Collector</figcaption>
+                <a i18n class="d-flex justify-content-end mt-auto p-2" id="linkMore {{c.id}}" (click)="onSelected(c)">More details ▼</a>
+              </figure>
+            </div>
+          </div>
+          <div class="row p-2">
+            <div class="col border">
+              <div *ngIf="selected">
+                <app-collector-detail [collectorDetail]="selectedCollector"></app-collector-detail>
+                <a i18n  class="d-flex justify-content-end mt-auto p-2" (click)="selected=false">Less details ▲</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

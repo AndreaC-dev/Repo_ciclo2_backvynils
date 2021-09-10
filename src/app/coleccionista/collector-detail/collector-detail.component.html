@@ -1,0 +1,37 @@
+
+<div class="col">
+  <div *ngFor="let ca of collectorDetail.collectorAlbums">
+    <div>
+      <figcaption id="collector_price_album {{ca.price}}" class="title-caption">Price: {{ca.price}}</figcaption>
+    </div>
+    <div>
+      <figcaption id="collector_album_status {{ca.status}}" class="title-caption">Status: {{ca.status}} </figcaption>
+    </div>
+    <div>
+      <figcaption class="title-caption">id: {{ca.id}} </figcaption>
+    </div>
+  </div>
+
+    <dl>
+      <dt id="add-performer-title" i18n>Add a Favorite Performer</dt>
+    </dl>
+    <dl>
+      <dd id="music"> </dd>
+      <form [formGroup]="performerForm" class="form-inline">
+        <div class="form-group  mx-sm-3 mb-2">
+          <select class="form-control" rows="3" formControlName="musicians" aria-label="List of musicians">
+            <option *ngFor="let fp of listMusicians" value={{fp.id}}>{{fp.name}}</option>
+          </select>
+          <button i18n class="btn btn-prymary color-backvynils mb-2" style="float: right" id="add-perfomers" (click)="addPerformer(collectorDetail.id, performerForm.value)">Add Performer</button>
+        </div>
+      </form>
+    </dl>
+  <dl>
+    <dt i18n>Favorite Performers</dt>
+  </dl>
+  <div *ngFor="let fp of collectorDetail.favoritePerformers">
+    <div>
+      <figcaption class="title-caption">{{fp.name}}</figcaption> <br>
+    </div>
+  </div>
+</div>
